@@ -1,0 +1,28 @@
+Jan 8, 2024
+Iterative Full Stack Development with the MEAN stack: An Introduction
+
+    What were the most challenging aspects of the installation process for you?
+	Full stack development with the MEAN stack requires the installation of several 
+	applications and utilities:
+	
+    	1) Install Node.js and Node Package Manager (NPM) by following the instructions.
+    	2) Download the Git distributed version control system by following the instructions.
+    	3) Install Visual Studio Code (VS Code) by following the instructions.
+	   Please note: This is the free, lightweight source editor. This is not the full Visual Studio package.
+    	4) Install the MongoDB Community Server by following the instructions.
+    	5) Download the Robo 3T graphical IDE for MongoDB by following the instructions.
+
+	Overall, the instructions were clear and straightforward. Since I'm running Ubuntu Linux 22.04, I made 
+	sure I checked any special instructions provided in the Ubuntu package manager.
+
+    How would you gauge your level of experience with HTML and JavaScript after the tutorial?
+	HTML and Javascript skills are useful to create any full stack application using the MEAN stack. The Express
+	framework handles alot of the behind the scenes routing and page handling, but HTML and Javascript are needed
+	to provide the appropriate content on each page or partial page.
+
+    How would you sum up Module One?
+	Module One describes the steps necessary to install the applications to use the MEAN stack to create full
+	stack applications. It walks the class through creating a new Express application and set up routes and partial
+	pages to store common elements on a page. It also introduces best practices associated with git versioning. 
+	It explains why branching of new code is important and describes how this is accomplished.
+
