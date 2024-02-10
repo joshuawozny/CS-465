@@ -1,15 +1,11 @@
 var mongoose = require('mongoose');
 var readLine = require('readline');
-var host = process.env.DB_HOST || '127.0.0.1'
-var dbURI = 'mongodb://$(host):27017/travlr'
+var dbURI = 'mongodb://localhost:27017/travlr'
 
-// avoid current server discovery and monitoring engine is depreciated
-mongoose.set("useUnifiedTopology", true);
 
 const connect = ()=> {
     setTimeout(()=>mongoose.connect(dbURI, {
         useNewUrlParser: true,
-        useCreateIndex:true
     })), 1000;
 }
 
@@ -63,7 +59,7 @@ mongoose.connection.on("connected", () => {
     });
   });
   
-  //connect();
+  connect();
   
   // bring in schema
-  require("./models/travlr");
+  require("./models/trip");
