@@ -25,7 +25,7 @@ const tripsList = async (req, res) => {
 //GET: /trips/:tripCode for a single trip 
 const tripByCode = async (req, res) => {
     tripsModel
-        .find({'code': req.params.tripCode})  
+        .find({'code': req.params.tripCode})
         .exec((err, trip) => {
             if (!trip) {
                 return res
@@ -72,7 +72,7 @@ const tripsAddTrip = async (req, res) =>{
 const tripsUpdateTrip = async (req, res) => {
     console.log(req.body);
     tripsModel
-        .findOneAndUpdate({ 'code': req.params.code }, {
+        .findOneAndUpdate({ 'code': req.params.tripCode }, {
             code: req.body.code,
             name: req.body.name,
             length: req.body.length,
@@ -82,13 +82,13 @@ const tripsUpdateTrip = async (req, res) => {
             image: req.body.image,
             description: req.body.description
         }, { new: true })
-        .then(trip => {
+        .then((trip) => {
             if (!trip) {
                 return res
                     .status(404)
                     .send({
                         message: "Trip not found with code "
-                            + req.params.tripCode
+                            + req.params.code
                     });
             }
             res.send(trip);
@@ -98,7 +98,7 @@ const tripsUpdateTrip = async (req, res) => {
                 .status(404)
                 .send({
                     message: "Trip not found with code "
-                        + req.params.tripCode
+                        + req.params.code
                 });
         }
         return res
@@ -107,11 +107,39 @@ const tripsUpdateTrip = async (req, res) => {
     });
 }
 
+//delete trips by ID
+const tripsDeleteTrip = async (req, res) => {
+    console.log(">>tripsDeleteTrip in API");
+
+    tripsModel.findOneAndDelete(
+        { code: req.params.tripCode })
+
+        .then((trip) => {
+            if (!trip) {
+                return res.status(404).send({
+                    message: "Trip not found with code " + req.params.code,
+                });
+            }
+            res.send(trip);
+        })
+
+        .catch((err) => {
+            if (err.kind === "ObjectId") {
+                return res.status(404).send({
+                    message: "Trip not found with code " + req.params.code,
+                });
+            }
+            return res
+                .status(500) // server error
+                .json(err);
+        });
+}
 
 
 module.exports = {
     tripsList,
     tripByCode,
     tripsAddTrip,
-    tripsUpdateTrip
+    tripsUpdateTrip,
+    tripsDeleteTrip
 };

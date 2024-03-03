@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 //import {trips} from "../data/trips";
-import {TripDataService} from "../../../services/trip-data.service";
-import {Trip} from "../../../models/Trip";
+import {TripDataService} from "../services/trip-data.service";
+import {Trip} from "../models/Trip";
 
 @Component({
   selector: 'app-trip-listing',

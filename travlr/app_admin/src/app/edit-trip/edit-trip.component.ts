@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {TripDataService} from '../../../services/trip-data.service';
+import {TripDataService} from '../services/trip-data.service';
 
 @Component({
   selector: 'app-edit-trip',
@@ -60,8 +60,10 @@ export class EditTripComponent implements OnInit {
       this.tripService.updateTrip(this.editForm.value)
         .then(data => {
           console.log(data);
-          this.router.navigate(['']);
+          this.router.navigate([""]);
         });
     }
   }
+
+  get f() { return this.editForm.controls; }
 }
