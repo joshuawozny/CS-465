@@ -63,3 +63,4 @@ mongoose.connection.on("connected", () => {
   
   // bring in schema
   require("./models/trip");
+require("./models/user");
