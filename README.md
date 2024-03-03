@@ -1,7 +1,11 @@
 # CS-465
 ## Project
 ![image](https://github.com/joshuawozny/CS-465/blob/main/Screenshot%20from%202023-12-30%2015-42-42.png)
+![image](https://github.com/joshuawozny/CS-465/blob/main/Screenshot_20240303_131827.png)
+
 <hr>
+<br>
+
 ## Course Description
 
 Students will design and develop a full stack application through the utilization of programming language frameworks. In creating a full stack application, students will also be responsible for developing a database as well as the code that interfaces their application to the database. This course is the first course in a two-course sequence.
